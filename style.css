@@ -1,4 +1,4 @@
-body{
+.body{
     height: 95vh;
     width: 95;
     display: flex;
@@ -6,6 +6,7 @@ body{
     align-items: center;
     flex-direction: column;
     color: rgb(21, 61, 21);
+    font-family: fantasy;
 }
 
 #snake{

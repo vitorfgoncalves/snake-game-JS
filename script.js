@@ -6,7 +6,6 @@ let box = 32;
 
 var score = 0;
 
-
 let snake = [];
 snake[0] = {
     x: 8 * box,
@@ -54,7 +53,7 @@ function iniciarJogo() {
     criarCobrinha();
     drawFood();
 
-    context.fillText("Score: " + score, 0,16); 
+    context.fillText("Pontuação: " + score, 0,16); 
 
     if(snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
     if(snake[0].x <= 0 && direction == "left") snake[0].x = 16 * box;
@@ -96,4 +95,8 @@ function iniciarJogo() {
 }
 
 let jogo = setInterval(iniciarJogo, 50);
+
+function iniciar(){
+    location.reload();  
+}
 
