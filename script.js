@@ -4,6 +4,9 @@ let context = canvas.getContext("2d");
 
 let box = 32;
 
+var score = 0;
+
+
 let snake = [];
 snake[0] = {
     x: 8 * box,
@@ -35,6 +38,7 @@ function drawFood() {
     context.fillRect (food.x, food.y, box, box);
 }
 
+
 // Fim das funções de desenho
 document.addEventListener('keydown', update);
 
@@ -49,7 +53,9 @@ function iniciarJogo() {
     criarBG();
     criarCobrinha();
     drawFood();
-    
+
+    context.fillText("Score: " + score, 0,16); 
+
     if(snake[0].x > 15 * box && direction == "right") snake[0].x = 0;
     if(snake[0].x <= 0 && direction == "left") snake[0].x = 16 * box;
     if(snake[0].y > 15 * box && direction == "down") snake[0].y = 0;
@@ -74,6 +80,7 @@ function iniciarJogo() {
         snake.pop();
     }
     else {
+        score++;
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;    
     }

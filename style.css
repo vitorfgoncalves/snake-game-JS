@@ -7,3 +7,11 @@ body{
     flex-direction: column;
     color: rgb(21, 61, 21);
 }
+
+#snake{
+    border: 2px solid #000000;
+}
+
+#score{
+    font-family: fantasy;
+}
